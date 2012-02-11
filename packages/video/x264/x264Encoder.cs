@@ -102,6 +102,9 @@ new JobProcessorFactory(new ProcessorFactory(init), "x264Encoder");
                 case 0: sb.Append("--profile baseline "); break;
                 case 1: sb.Append("--profile main "); break;
                 case 2: break; // --profile high is the default value
+                case 3: sb.Append("--profile high10 "); break;
+                case 4: sb.Append("--profile high422 "); break;
+                case 5: sb.Append("--profile high444 "); break;
             }
 
             // AVC Levels

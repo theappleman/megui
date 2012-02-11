@@ -827,7 +827,7 @@ namespace MeGUI
                     QuantizerMatrix = "";
                     WeightedPPrediction = 0;
                     break;
-                case 2:
+                default: // High, also applies to hi10, hi422 and hi444
                     x264BFramePyramid = 2;
                     WeightedPPrediction = 1;
                     break;

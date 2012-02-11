@@ -785,6 +785,12 @@ targeting specific classes of applications:
 - High Profile (HiP): The primary profile for broadcast and disc storage applications, particularly
 	for high-definition television applications (this is the profile adopted into HD DVD and Blu-ray Disc,
 	for example).
+- High 10 Profile (Hi10P): Extends the High Profile to support up to 10 bits per sample of decoded
+  picture precision.
+- High 422 Profile (Hi422P): Extends the High 10 Profile to support 4:2:2 chroma subsampling.
+- High 444 Predictive Profile: Extends the High 422 Profile; adding support for 4:4:4 chroma
+  subsampling, up to 14 bits per sample of decoded picture precision, efficient lossless region coding,
+  and the coding of each picture as three separate color planes.
 		</Advanced>
 		<Basic>Choose your AVC Profile.</Basic>
 		<Recommended>High Profile</Recommended>
