@@ -410,7 +410,7 @@
     <Compile Include="core\gui\SourceDetectorConfigWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="core\gui\SourceDetectorConfigWindow.designer.cs">
+    <Compile Include="core\gui\SourceDetectorConfigWindow.Designer.cs">
       <DependentUpon>SourceDetectorConfigWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="core\gui\SourceDetectorSettings.cs" />
@@ -433,7 +433,7 @@
     <Compile Include="core\gui\UpdateWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="core\gui\UpdateWindow.designer.cs">
+    <Compile Include="core\gui\UpdateWindow.Designer.cs">
       <DependentUpon>UpdateWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="core\gui\VideoPlayer.cs">
@@ -442,7 +442,7 @@
     <Compile Include="core\gui\VideoPlayerControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="core\gui\VideoPlayerControl.designer.cs">
+    <Compile Include="core\gui\VideoPlayerControl.Designer.cs">
       <DependentUpon>VideoPlayerControl.cs</DependentUpon>
     </Compile>
     <Compile Include="core\gui\WorkerSummary.cs">
@@ -1066,9 +1066,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>cmd /c "SubWCRev $(ProjectDir) $(ProjectDir)AssemblyInfo.template $(ProjectDir)AssemblyInfo.cs&amp;&amp;exit 0"
+    <PreBuildEvent Condition=" '$(OS)' == 'Windows_NT' ">cmd /c "SubWCRev $(ProjectDir) $(ProjectDir)AssemblyInfo.template $(ProjectDir)AssemblyInfo.cs&amp;&amp;exit 0"
 </PreBuildEvent>
-    <PostBuildEvent>MOVE /Y "$(TargetDir)lib_$(PlatformName)\*.*" "$(TargetDir)"
+    <PostBuildEvent Condition=" '$(OS)' == 'Windows_NT' ">MOVE /Y "$(TargetDir)lib_$(PlatformName)\*.*" "$(TargetDir)"
 RD /S /Q "$(TargetDir)lib_$(PlatformName)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
