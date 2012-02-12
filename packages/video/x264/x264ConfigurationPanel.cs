@@ -1721,7 +1721,7 @@ namespace MeGUI.packages.video.x264
                         cabac.Checked = true;
                     }
                     break;
-                case 2: // high profile, enable everything
+                default: // high+ profile, enable everything
                     if (!x264NumberOfBFrames.Enabled)
                     {
                         x264NumberOfBFrames.Enabled = true;

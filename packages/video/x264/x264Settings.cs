@@ -178,7 +178,7 @@ namespace MeGUI
             transfer = 0;
             colorPrim = 0;
             x264Aud = false;
-            profile = 3; // Autoguess. High if using default options.
+            profile = 2; // Autoguess. High if using default options.
             level = 15;
             x264SlowFirstpass = false;
             openGop = "False";

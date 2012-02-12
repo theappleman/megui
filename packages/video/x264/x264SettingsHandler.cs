@@ -455,7 +455,8 @@ namespace MeGUI.packages.video.x264
         /// <summary>
         /// Calculates the AVC profile number
         /// </summary>
-        /// <returns>the AVC profile value (0 baseline, 1 main, 2 high)</returns>
+        /// <returns>the AVC profile value (0 baseline, 1 main, 2 high, 3 high 10,
+        /// 				4 high 422, 5 high 444 predictive)</returns>
         public int getProfile()
         {
             string strCustomValue;
@@ -465,6 +466,9 @@ namespace MeGUI.packages.video.x264
                 case "baseline": _xs.Profile = 0; break;
                 case "main": _xs.Profile = 1; break;
                 case "high": _xs.Profile = 2; break;
+                case "high10": _xs.Profile = 3; break;
+                case "high422": _xs.Profile = 4; break;
+                case "high444p": _xs.Profile = 5; break;
             }
 
             if (_log == null)
@@ -476,8 +480,19 @@ namespace MeGUI.packages.video.x264
                     _log.LogEvent(strDevice + "changing --profile to baseline");
                 else if (_device.Profile == 1)
                     _log.LogEvent(strDevice + "changing --profile to main");
-                else
+                else if (_device.Profile == 2)
                     _log.LogEvent(strDevice + "changing --profile to high");
+                else if (_device.Profile == 3)
+                    _log.LogEvent(strDevice + "changing --profile to high 10");
+                else if (_device.Profile == 4)
+                    _log.LogEvent(strDevice + "changing --profile to high 422");
+                else if (_device.Profile == 5)
+                    _log.LogEvent(strDevice + "changing --profile to high 444 predictive");
+		else {
+		    _log.LogEvent(strDevice + "unknown profile, using --profile main");
+		    return _xs.Profile = 2; // XXX: error out instead?
+		}
+
                 _xs.Profile = _device.Profile;
             }
 
