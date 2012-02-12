@@ -1405,7 +1405,7 @@ namespace MeGUI.packages.video.x264
                 cbInterlaceMode.SelectedIndex = (int)xs.InterlacedMode;
                 noDCTDecimateOption.Checked = xs.NoDCTDecimate;
                 ssim.Checked = xs.SSIMCalculation;
-                if (xs.Profile > 2)
+                if (xs.Profile > 5)
                     avcProfile.SelectedIndex = 2;
                 else
                     avcProfile.SelectedIndex = xs.Profile;
